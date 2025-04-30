@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function authServices() {
     const [authLoading, setAuthLoading] = useState(false)
 
-    const url = 'http://localhost:3001/auth'
+    const url = 'http://localhost:3000/auth'
 
     const login = (formData) => {
         setAuthLoading(true)
@@ -43,8 +43,7 @@ export default function authServices() {
         fetch(`${url}/signup`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
         })
